@@ -1,0 +1,10 @@
+<div class="Libros">
+  <a>Libros</a>
+  <div class="MisLibros">
+    <div mat-fab extended *ngFor="let libro of libros" class="LibroDisplay">
+      <h3>{{libro.autor}} {{libro.titulo}}</h3>
+    </div>
+  </div>
+  <button mat-fab extended class="addLibro" (click)="addBook()">Añadir Libro</button>
+  </div>
+
