@@ -35,10 +35,12 @@
     .MinorColor {
       padding: 30px;
       margin-bottom: 30px;
-      .label{
+    }
+    .label{
         display: block;
         margin-bottom: 20px;
         font-weight: bold;
+        font-size: xx-large;
       }
 
       .input {
@@ -73,5 +75,3 @@
     }
 
   }
-
-}

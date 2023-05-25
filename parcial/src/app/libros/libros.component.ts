@@ -22,8 +22,8 @@ ngOnInit(): void {
   }
 
 
-  addBook(): void {
-
+  addLibro(): void {
+    this.openDialog()
   }
 
   openDialog(){
