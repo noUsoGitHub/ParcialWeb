@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AnadirlibroComponent } from '../anadirlibro/anadirlibro.component';
+import { LibroService } from '../libro.service';
 
 interface libro {
   titulo: string;
@@ -16,9 +17,12 @@ interface libro {
 })
 export class LibrosComponent implements OnInit{
   libros: libro[] = [];
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, public service: LibroService){}
 ngOnInit(): void {
-
+  this.service.libros().subscribe((data: any)=>
+  {
+    this.libros = data
+  })
   }
 
 

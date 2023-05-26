@@ -7,13 +7,13 @@ import { libro } from './libro';
   providedIn: 'root'
 })
 export class LibroService {
-  backendAPI = "Hola"
+  backendAPI = "http://localhost:8080/libros"
   constructor(private http: HttpClient){}
-  getLibros():Observable<libro[]>{
-    return this.http.get<libro[]>(`${this.backendAPI}/listaLibros`)
+  libros():Observable<libro[]>{
+    return this.http.get<libro[]>(`${this.backendAPI}/lista`)
   }
-  createEquipo(libro:libro):Observable<libro>{
-    return this.http.post(`${this.backendAPI}/anadirLibro/`,libro)
+  addLibro(libro:libro):Observable<libro>{
+    return this.http.post(`${this.backendAPI}/anadir`,libro)
     .pipe(map(response => response as libro));
   }
 }
